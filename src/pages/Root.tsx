@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 function Root() {
     return (
         <div>
-            <div className="container mx-auto py-4">Navbar</div>
+            <Navbar />
             <Outlet />
         </div>
     )
