@@ -9,7 +9,7 @@ type BaseMediaItem = {
     original_language: string
     overview: string
     poster_path: string
-    media_type: string
+    media_type: 'movie' | 'tv'
     genre_ids: number[]
     popularity: number
     vote_average: number
@@ -43,4 +43,4 @@ export type PaginatedResponse = {
     total_results: number
 }
 
-export type FileSize = "w500" | "original"
+export type FileSize = 'w500' | 'original'
