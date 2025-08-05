@@ -9,7 +9,7 @@ export function formatDate(dateStr: string, format: DateFormat): string {
         format === 'year'
             ? { year: 'numeric' }
             : format === 'monthYear'
-            ? { month: 'long', year: 'numeric' }
+            ? { month: 'short', year: 'numeric' }
             : { day: '2-digit', month: 'long', year: 'numeric' }
 
     return new Intl.DateTimeFormat('en-US', options).format(date)
