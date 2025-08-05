@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useTrendingMedia } from '../hooks/useTrendingMedia'
 import MediaCard from '../components/MediaCard'
 import LoadingOverlay from '../components/LoadingOverlay'
@@ -12,8 +11,6 @@ function Home() {
         error
     } = useTrendingMedia('all', 'week', 1)
 
-    useEffect(() => console.log(medias?.results), [medias])
-
     if (isLoading) return <LoadingOverlay />
     if (isError) return <ErrorMessage message={error.message} />
 
@@ -23,7 +20,7 @@ function Home() {
                 {medias &&
                     medias.results.map((media) => (
                         <li key={media.id}>
-                            <MediaCard media={media} />
+                            <MediaCard media={media} variant="media" />
                         </li>
                     ))}
             </ul>
