@@ -1,17 +1,21 @@
 import { useEffect } from 'react'
 import { useTrendingMedia } from '../hooks/useTrendingMedia'
 import MediaCard from '../components/MediaCard'
+import LoadingOverlay from '../components/LoadingOverlay'
+import ErrorMessage from '../components/ErrorMessage'
 
 function Home() {
     const {
         data: medias,
         isLoading,
-        isError
+        isError,
+        error
     } = useTrendingMedia('all', 'week', 1)
 
     useEffect(() => console.log(medias?.results), [medias])
 
-    if (isLoading || isError) return null
+    if (isLoading) return <LoadingOverlay />
+    if (isError) return <ErrorMessage message={error.message} />
 
     return (
         <div className="container mt-2">
