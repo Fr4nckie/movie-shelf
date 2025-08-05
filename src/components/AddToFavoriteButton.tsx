@@ -5,7 +5,7 @@ type Props = {
     onclick: () => void
 }
 
-function AddToFavoriButton({ isActive, onclick }: Props) {
+function AddToFavoriteButton({ isActive, onclick }: Props) {
     return (
         <button
             className={cn(
@@ -26,4 +26,4 @@ function AddToFavoriButton({ isActive, onclick }: Props) {
     )
 }
 
-export default AddToFavoriButton
+export default AddToFavoriteButton
